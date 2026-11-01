@@ -1,0 +1,302 @@
+{
+ "_note": "Test vectors only. Ephemeral signing key, discarded after generation.",
+ "keys": [
+  {
+   "kty": "OKP",
+   "crv": "Ed25519",
+   "x": "Kcly21XQKRfpn_Z0YHfMV7KGPmwZah3F6HKwVOb-Kkg",
+   "kid": "ed25519:6c0e94e4519f9579"
+  }
+ ],
+ "messages": [
+  {
+   "role": "user",
+   "content": "What is the capital of France?"
+  }
+ ],
+ "output_ids": [
+  785,
+  6722,
+  315,
+  9625,
+  374,
+  12095,
+  13
+ ],
+ "output_text": "The capital of France is Paris.",
+ "salt_b64u": "AAECAwQFBgcICQoLDA0ODw",
+ "log_text": "0 0 3defd3cf4e4665d2 bbdc79efc388d17b\n1 0 12a294bc602ab29c 0a76589383346ba8\n2 0 3f42840f356fdc04 389eef2f79d0ed1d\n3 0 28959ad6a19e2f62 e969650a1b9f42f3\n4 0 92c0e0d4c718e1f3 c2309a74df6407f7\n5 0 fcb4fc74c396af32 085ae8c69639a735\n6 0 3a82ceb64541dbce 3a970264143f27cc\n7 0 799db6559031fb3e c5db956e2ec2bfa5\n8 0 60c4d484f5ce5038 abdc9cc7df83ffa0\n9 0 cdaf9df15c1216c8 3d5818959d1f7841\n10 0 0abd5d711b2641b3 28c9ad966c67dad3\n11 0 6a39a63ea1fb9834 f928a4687d40b3da\n12 0 54e0a04389729c66 5d178e78747a54bf\n13 0 5f997a216334579b 650be66fa60dad38\n14 0 1df313d95e29f180 a43b868b8cb7ab96\n15 0 2f86a3754073967c 6f0c01030b284bb3\n16 0 4995f6c713416dfb caf3e77060920a33\n17 0 9c71e00e1da339d0 e9f894f03d207ce3\n18 0 cbea798da8074264 31ff256ce5718235\n19 0 1ea9223520eaca2e e6e376f18d7cfedc\n20 0 f52a9bb7334a7d89 2aeeb86e158e2771\n21 0 83541178f5ef8847 3ef5df19db7da349\n22 0 16e5ea03dcb33bba 04c6b52bbda8fbec\n23 0 d81580753faaffe2 5efaa6b7a36d102c\n24 0 8754318966e0e57e 391d58ea8d9aea4c\n25 0 5446cdc616678bbb fea799a791f12fde\n26 0 300a392f8a2cd7e8 37de571bf6a2e42e\nALL 47f6f4da18d9f83e\n",
+ "bad_log_text": "0 0 3defd3cf4e4665d2 bbdc79efc388d17b\n1 0 12a294bc602ab29c 0a76589383346ba8\n2 0 3f42840f356fdc04 389eef2f79d0ed1d\n3 0 28959ad6a19e2f62 e969650a1b9f42f7\n4 0 92c0e0d4c718e1f3 c2309a74df6407f7\n5 0 fcb4fc74c396af32 085ae8c69639a735\n6 0 3a82ceb64541dbce 3a970264143f27cc\n7 0 799db6559031fb3e c5db956e2ec2bfa5\n8 0 60c4d484f5ce5038 abdc9cc7df83ffa0\n9 0 cdaf9df15c1216c8 3d5818959d1f7841\n10 0 0abd5d711b2641b3 28c9ad966c67dad3\n11 0 6a39a63ea1fb9834 f928a4687d40b3da\n12 0 54e0a04389729c66 5d178e78747a54bf\n13 0 5f997a216334579b 650be66fa60dad38\n14 0 1df313d95e29f180 a43b868b8cb7ab96\n15 0 2f86a3754073967c 6f0c01030b284bb3\n16 0 4995f6c713416dfb caf3e77060920a33\n17 0 9c71e00e1da339d0 e9f894f03d207ce3\n18 0 cbea798da8074264 31ff256ce5718235\n19 0 1ea9223520eaca2e e6e376f18d7cfedc\n20 0 f52a9bb7334a7d89 2aeeb86e158e2771\n21 0 83541178f5ef8847 3ef5df19db7da349\n22 0 16e5ea03dcb33bba 04c6b52bbda8fbec\n23 0 d81580753faaffe2 5efaa6b7a36d102c\n24 0 8754318966e0e57e 391d58ea8d9aea4c\n25 0 5446cdc616678bbb fea799a791f12fde\n26 0 300a392f8a2cd7e8 37de571bf6a2e42e\nALL 47f6f4da18d9f83e\n",
+ "receipts": {
+  "full": {
+   "tenant_id": "tnt_demo",
+   "model_id": "qwen2.5-7b-instruct-q4",
+   "weights_hash": "abababababababababababababababababababababababababababababababab",
+   "kernel_version": "0.2.0",
+   "engine_build": "demo",
+   "privacy": "full",
+   "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+   "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+   "seed": 0,
+   "decoding": "greedy",
+   "prompt_tokens": 20,
+   "output_tokens": 7,
+   "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+   "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+   "chain_fnv": "47f6f4da18d9f83e",
+   "log_ref": "log_demo_0001",
+   "finish_reason": "stop",
+   "receipt_version": "r1",
+   "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+   "issued_at": "2026-10-31T08:05:44.456Z",
+   "key_id": "ed25519:6c0e94e4519f9579",
+   "signature": "dN3Ioc-b5ws01QJPsgQw8awNE9Tn-xkTQXwD2KnsT-PMrp5lo3TG1dguGfEqbFz3RkEoTvRJGXJZIHBMPigHCA"
+  },
+  "hash_only": {
+   "tenant_id": "tnt_demo",
+   "model_id": "qwen2.5-7b-instruct-q4",
+   "weights_hash": "abababababababababababababababababababababababababababababababab",
+   "kernel_version": "0.2.0",
+   "engine_build": "demo",
+   "privacy": "hash_only",
+   "prompt_hash": "2b7b9086cf7a83c90fafde846c9f3483e11ca623284fb6dbe1876813984ee69c",
+   "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+   "seed": 0,
+   "decoding": "greedy",
+   "prompt_tokens": 20,
+   "output_tokens": 7,
+   "output_token_hash": "9194a6f1cab7bccd2e6e093bc6b94586133ae9fac334d3dbed636a96d92fa960",
+   "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+   "chain_fnv": "47f6f4da18d9f83e",
+   "log_ref": "log_demo_0001",
+   "finish_reason": "stop",
+   "receipt_version": "r1",
+   "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+   "issued_at": "2026-10-31T08:05:44.457Z",
+   "key_id": "ed25519:6c0e94e4519f9579",
+   "signature": "WLTl4zwbF6q5JR0DIOW0oOVWNBzSbLrX8MJS7uULm-AHDoxLfUW_W26YKl0kQV9zL0aqp6yf3XmLgqWZTlaRCg"
+  },
+  "full_text": {
+   "tenant_id": "tnt_demo",
+   "model_id": "qwen2.5-7b-instruct-q4",
+   "weights_hash": "abababababababababababababababababababababababababababababababab",
+   "kernel_version": "0.2.0",
+   "engine_build": "demo",
+   "privacy": "full",
+   "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+   "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+   "seed": 0,
+   "decoding": "greedy",
+   "prompt_tokens": 20,
+   "output_tokens": 7,
+   "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+   "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+   "chain_fnv": "47f6f4da18d9f83e",
+   "log_ref": "log_demo_0001",
+   "finish_reason": "stop",
+   "receipt_version": "r1",
+   "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+   "issued_at": "2026-10-31T08:05:44.456Z",
+   "output_text_hash": "8d13067e36d38dff1193e0cd004770bef72df7975a5c9a05fa994758b3ae787c",
+   "key_id": "ed25519:6c0e94e4519f9579",
+   "signature": "kZRfo5pSYcDSeQn0ZAcPyW_ENl90fVtlSEV-4jBSneogCqimQGdYlE5ZRq8bs3DteVon1kGJpecA8Bp56k7AAg"
+  },
+  "hash_only_text": {
+   "tenant_id": "tnt_demo",
+   "model_id": "qwen2.5-7b-instruct-q4",
+   "weights_hash": "abababababababababababababababababababababababababababababababab",
+   "kernel_version": "0.2.0",
+   "engine_build": "demo",
+   "privacy": "hash_only",
+   "prompt_hash": "2b7b9086cf7a83c90fafde846c9f3483e11ca623284fb6dbe1876813984ee69c",
+   "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+   "seed": 0,
+   "decoding": "greedy",
+   "prompt_tokens": 20,
+   "output_tokens": 7,
+   "output_token_hash": "9194a6f1cab7bccd2e6e093bc6b94586133ae9fac334d3dbed636a96d92fa960",
+   "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+   "chain_fnv": "47f6f4da18d9f83e",
+   "log_ref": "log_demo_0001",
+   "finish_reason": "stop",
+   "receipt_version": "r1",
+   "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+   "issued_at": "2026-10-31T08:05:44.457Z",
+   "output_text_hash": "473ae2d79c533ebe8971e075bc38e99d7f7fa190b6e39d2b830de44bfb853b69",
+   "key_id": "ed25519:6c0e94e4519f9579",
+   "signature": "Adxl70Y2NBsgsztDQeHMVd-Y68AgbuMjuLjDJ-D5PDApg038CD39R5rSah3xndcyRRBz45idKqdGdwaF71F7DA"
+  },
+  "tampered": {
+   "tenant_id": "tnt_demo",
+   "model_id": "qwen2.5-72b-instruct",
+   "weights_hash": "abababababababababababababababababababababababababababababababab",
+   "kernel_version": "0.2.0",
+   "engine_build": "demo",
+   "privacy": "full",
+   "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+   "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+   "seed": 0,
+   "decoding": "greedy",
+   "prompt_tokens": 20,
+   "output_tokens": 7,
+   "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+   "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+   "chain_fnv": "47f6f4da18d9f83e",
+   "log_ref": "log_demo_0001",
+   "finish_reason": "stop",
+   "receipt_version": "r1",
+   "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+   "issued_at": "2026-10-31T08:05:44.456Z",
+   "output_text_hash": "8d13067e36d38dff1193e0cd004770bef72df7975a5c9a05fa994758b3ae787c",
+   "key_id": "ed25519:6c0e94e4519f9579",
+   "signature": "kZRfo5pSYcDSeQn0ZAcPyW_ENl90fVtlSEV-4jBSneogCqimQGdYlE5ZRq8bs3DteVon1kGJpecA8Bp56k7AAg"
+  },
+  "foreign_key": {
+   "tenant_id": "tnt_demo",
+   "model_id": "qwen2.5-7b-instruct-q4",
+   "weights_hash": "abababababababababababababababababababababababababababababababab",
+   "kernel_version": "0.2.0",
+   "engine_build": "demo",
+   "privacy": "full",
+   "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+   "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+   "seed": 0,
+   "decoding": "greedy",
+   "prompt_tokens": 20,
+   "output_tokens": 7,
+   "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+   "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+   "chain_fnv": "47f6f4da18d9f83e",
+   "log_ref": "log_demo_0001",
+   "finish_reason": "stop",
+   "receipt_version": "r1",
+   "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+   "issued_at": "2026-10-31T08:05:44.456Z",
+   "key_id": "ed25519:0c7902f3751168b2",
+   "signature": "grN40kUTTh5AeuwTRZB7QlHpaIk-Jqx7Oahj4ep38D31bxtXgFaGj8wKf0L10Fm1zjaJeK_ksM6HRbt-rdHgCQ"
+  }
+ },
+ "audit": {
+  "events": [
+   {
+    "tenant_id": "tnt_demo",
+    "seq": 1,
+    "ts": "2026-10-31T07:01:00.000Z",
+    "event_type": "receipt.issued",
+    "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+    "actor": "api",
+    "payload": {
+     "n": 1
+    },
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "event_hash": "ac50361af0c3a5ca55b6a37957216c96537210cdc24d639af1ac55518fbe9d65"
+   },
+   {
+    "tenant_id": "tnt_demo",
+    "seq": 2,
+    "ts": "2026-10-31T07:02:00.000Z",
+    "event_type": "receipt.issued",
+    "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+    "actor": "api",
+    "payload": {
+     "n": 2
+    },
+    "prev_hash": "ac50361af0c3a5ca55b6a37957216c96537210cdc24d639af1ac55518fbe9d65",
+    "event_hash": "dff0d2bf5d1d6e42e38d324e1a8e702dc5ea866a241a3d722353a4e9c901e3f3"
+   },
+   {
+    "tenant_id": "tnt_demo",
+    "seq": 3,
+    "ts": "2026-10-31T07:03:00.000Z",
+    "event_type": "receipt.viewed",
+    "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+    "actor": "api",
+    "payload": {
+     "n": 3
+    },
+    "prev_hash": "dff0d2bf5d1d6e42e38d324e1a8e702dc5ea866a241a3d722353a4e9c901e3f3",
+    "event_hash": "fb821456ce0e72b3799dffc5d08309c0ffd71b833e0cf8ddc10a2ef21fe24aa9"
+   }
+  ],
+  "roots": [
+   {
+    "tenant_id": "tnt_demo",
+    "day": "2026-10-31",
+    "count": 3,
+    "first_seq": 1,
+    "last_seq": 3,
+    "merkle_root": "ff9422432e62f6114cd7938ca884e02f59a8e5c9aea7a7bfa0d54baf7bbed66c",
+    "key_id": "ed25519:6c0e94e4519f9579",
+    "signature": "_SZsBX31llyWHZZzskiWwoRIoMA8lOVveb5Jb_zlqTqZFnhCqj6Y9P6iq_hqsDW7i9jz6giQs72vFEdQE5e_AQ"
+   }
+  ],
+  "receipts": [
+   {
+    "tenant_id": "tnt_demo",
+    "model_id": "qwen2.5-7b-instruct-q4",
+    "weights_hash": "abababababababababababababababababababababababababababababababab",
+    "kernel_version": "0.2.0",
+    "engine_build": "demo",
+    "privacy": "full",
+    "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+    "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+    "seed": 0,
+    "decoding": "greedy",
+    "prompt_tokens": 20,
+    "output_tokens": 7,
+    "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+    "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+    "chain_fnv": "47f6f4da18d9f83e",
+    "log_ref": "log_demo_0001",
+    "finish_reason": "stop",
+    "receipt_version": "r1",
+    "receipt_id": "rcpt_975db61c85d8c9e967952ba4",
+    "issued_at": "2026-10-31T08:05:44.456Z",
+    "key_id": "ed25519:6c0e94e4519f9579",
+    "signature": "dN3Ioc-b5ws01QJPsgQw8awNE9Tn-xkTQXwD2KnsT-PMrp5lo3TG1dguGfEqbFz3RkEoTvRJGXJZIHBMPigHCA"
+   },
+   {
+    "tenant_id": "tnt_demo",
+    "model_id": "qwen2.5-7b-instruct-q4",
+    "weights_hash": "abababababababababababababababababababababababababababababababab",
+    "kernel_version": "0.2.0",
+    "engine_build": "demo",
+    "privacy": "hash_only",
+    "prompt_hash": "2b7b9086cf7a83c90fafde846c9f3483e11ca623284fb6dbe1876813984ee69c",
+    "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+    "seed": 0,
+    "decoding": "greedy",
+    "prompt_tokens": 20,
+    "output_tokens": 7,
+    "output_token_hash": "9194a6f1cab7bccd2e6e093bc6b94586133ae9fac334d3dbed636a96d92fa960",
+    "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+    "chain_fnv": "47f6f4da18d9f83e",
+    "log_ref": "log_demo_0001",
+    "finish_reason": "stop",
+    "receipt_version": "r1",
+    "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+    "issued_at": "2026-10-31T08:05:44.457Z",
+    "key_id": "ed25519:6c0e94e4519f9579",
+    "signature": "WLTl4zwbF6q5JR0DIOW0oOVWNBzSbLrX8MJS7uULm-AHDoxLfUW_W26YKl0kQV9zL0aqp6yf3XmLgqWZTlaRCg"
+   }
+  ]
+ },
+ "expect": {
+  "full": {
+   "l1": true,
+   "l2": true
+  },
+  "hash_only": {
+   "l1": true
+  },
+  "tampered": {
+   "l1": false
+  },
+  "foreign_key": {
+   "l1": false
+  },
+  "bad_log": {
+   "l2": false
+  }
+ }
+}
