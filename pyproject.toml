@@ -31,6 +31,9 @@ dependencies = ["idemcore-verify>=0.3.0", "cryptography>=41"]
 [project.urls]
 Homepage = "https://idemcore.net"
 Documentation = "https://idemcore.net/docs"
+Source = "https://github.com/idemcore/idemcore-python"
+Issues = "https://github.com/idemcore/idemcore-python/issues"
+Changelog = "https://github.com/idemcore/idemcore-python/blob/main/CHANGELOG.md"
 Verifier = "https://github.com/idemcore/idemcore-verifier"
 
 [tool.setuptools.dynamic]

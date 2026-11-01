@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2 (2026-11-01)
+
+- Source repository is now public. Package metadata lists Source, Issues, Documentation
+  and Changelog links.
+- Added SECURITY.md and CONTRIBUTING.md.
+- No code changes.
+
 ## 0.1.1 (2026-11-01)
 
 - README: the quickstart, streaming and async examples now pass `model` explicitly
