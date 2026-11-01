@@ -111,6 +111,26 @@ The production receipt-signing public key is bundled
 (`idemcore.verify.DEFAULT_TRUSTED_KEYS`); pass `keys=client.keys()` to use the live
 key set instead.
 
+## Reproducible agents (record, replay, verify)
+
+Record a whole agent run (model calls with their receipts, tool calls, approvals) as a hash-chained trace,
+verify it offline, and replay it with a bit-identical check. Recorded tool results are fed back, so tools never run twice.
+
+```python
+from idemcore import trace
+s = trace.Session(client)
+city = s.chat("Which city is the Eiffel Tower in? One word.", max_tokens=8).text
+w = s.tool("get_weather", {"city": city}, get_weather)
+s.save("run.trace.json")
+```
+
+```bash
+python -m idemcore trace verify run.trace.json
+python -m idemcore trace replay run.trace.json
+```
+
+See [docs/agent-replay.md](docs/agent-replay.md) ([Tiếng Việt](docs/agent-replay.vi.md)) and `examples/agent_replay.py`.
+
 ## Errors
 
 All errors derive from `idemcore.IdemcoreError` and carry `status`, `type` and

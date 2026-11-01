@@ -1,0 +1,189 @@
+{
+ "manifest": {
+  "format": "idemcore-trace/r1",
+  "session_id": "ses_000000000000000000000001",
+  "created_at": "2026-11-01T00:00:00.000Z",
+  "sdk": "idemcore-python/0.1.2",
+  "meta_json": "{\"fixture\":\"py\",\"unicode\":\"Hà Nội ✓\"}",
+  "genesis": "c1a860011c6312ab685a8010041de73c7dcc2a562dffa8853247f606bca71e01",
+  "head": "5af4114083baeb1004256513a745e15705690fb2c10d0cca4afa9f85a3f605cc",
+  "step_count": 5
+ },
+ "manifest_hash": "107c10375c549d780aa2e175eba314a9db0ec245afe2ef0ccb8eb3e9f18cc2ea",
+ "steps": [
+  {
+   "index": 0,
+   "type": "model",
+   "prev": "c1a860011c6312ab685a8010041de73c7dcc2a562dffa8853247f606bca71e01",
+   "body": {
+    "request": {
+     "messages": [
+      {
+       "role": "user",
+       "content": "What is the capital of France?"
+      }
+     ],
+     "model": null,
+     "max_tokens": 16,
+     "privacy": null
+    },
+    "request_hash": "0a5f6d0025e800130b96cb9804be3826ae2c4336fe7507650598ab4b0b31fde6",
+    "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+    "receipt": {
+     "tenant_id": "tnt_demo",
+     "model_id": "qwen2.5-7b-instruct-q4",
+     "weights_hash": "abababababababababababababababababababababababababababababababab",
+     "kernel_version": "0.2.0",
+     "engine_build": "demo",
+     "privacy": "hash_only",
+     "prompt_hash": "2b7b9086cf7a83c90fafde846c9f3483e11ca623284fb6dbe1876813984ee69c",
+     "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+     "seed": 0,
+     "decoding": "greedy",
+     "prompt_tokens": 20,
+     "output_tokens": 7,
+     "output_token_hash": "9194a6f1cab7bccd2e6e093bc6b94586133ae9fac334d3dbed636a96d92fa960",
+     "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+     "chain_fnv": "47f6f4da18d9f83e",
+     "log_ref": "log_demo_0001",
+     "finish_reason": "stop",
+     "receipt_version": "r1",
+     "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+     "issued_at": "2026-10-31T08:05:44.457Z",
+     "output_text_hash": "473ae2d79c533ebe8971e075bc38e99d7f7fa190b6e39d2b830de44bfb853b69",
+     "key_id": "ed25519:6c0e94e4519f9579",
+     "signature": "Adxl70Y2NBsgsztDQeHMVd-Y68AgbuMjuLjDJ-D5PDApg038CD39R5rSah3xndcyRRBz45idKqdGdwaF71F7DA"
+    },
+    "receipt_hash": "8ecc4625666053be6d54e0c4005e15f0311d01200455f28f4e63f58e6e79b6dc",
+    "salt": "AAECAwQFBgcICQoLDA0ODw",
+    "output_token_ids": [
+     785,
+     6722,
+     315,
+     9625,
+     374,
+     12095,
+     13
+    ],
+    "output_text": "The capital of France is Paris.",
+    "output_text_sha": "587fbe51c7d8d52dc40c64eecbae4f3c147f6f1d25f4f59624808e6dc5d69f0a",
+    "finish_reason": "stop",
+    "usage": {
+     "prompt_tokens": 20,
+     "completion_tokens": 7,
+     "total_tokens": 27
+    },
+    "streamed": false
+   },
+   "hash": "65a205e43b49069add32d6c9c5497919e347bb48b80d1dece3543352f8ef0259"
+  },
+  {
+   "index": 1,
+   "type": "tool",
+   "prev": "65a205e43b49069add32d6c9c5497919e347bb48b80d1dece3543352f8ef0259",
+   "body": {
+    "name": "get_weather",
+    "call_id": "call_1",
+    "args_json": "{\"city\":\"Paris\"}",
+    "args_hash": "62b862e0978e39056434f0f483c35d5fb982d7c0d33dfd79e1be947bbf1368a8",
+    "result_json": "{\"city\":\"Paris\",\"temp_c\":18.5,\"sky\":\"cloudy\"}",
+    "result_hash": "422865ceeffb94a415465dd2a2201507ba873a86bc917921fdb5494a7aecdee8",
+    "error": null
+   },
+   "hash": "345081fecfc331b3babbf0a3282c763e4f00a29e2f8232c53ff2a46514686df2"
+  },
+  {
+   "index": 2,
+   "type": "note",
+   "prev": "345081fecfc331b3babbf0a3282c763e4f00a29e2f8232c53ff2a46514686df2",
+   "body": {
+    "kind": "approval",
+    "data_json": "{\"by\":\"ops\",\"ok\":true}",
+    "data_hash": "f646632619b74448f42b19e9fe6601055b9a367dc1707a76dbf3056056e72fdb"
+   },
+   "hash": "f407cf23409782f2fb893712bd8d948e7662a052c800ab920445bbd2ff402a0f"
+  },
+  {
+   "index": 3,
+   "type": "model",
+   "prev": "f407cf23409782f2fb893712bd8d948e7662a052c800ab920445bbd2ff402a0f",
+   "body": {
+    "request": {
+     "messages": [
+      {
+       "role": "user",
+       "content": "What is the capital of France?"
+      }
+     ],
+     "model": null,
+     "max_tokens": 16,
+     "privacy": null
+    },
+    "request_hash": "0a5f6d0025e800130b96cb9804be3826ae2c4336fe7507650598ab4b0b31fde6",
+    "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+    "receipt": {
+     "tenant_id": "tnt_demo",
+     "model_id": "qwen2.5-7b-instruct-q4",
+     "weights_hash": "abababababababababababababababababababababababababababababababab",
+     "kernel_version": "0.2.0",
+     "engine_build": "demo",
+     "privacy": "hash_only",
+     "prompt_hash": "2b7b9086cf7a83c90fafde846c9f3483e11ca623284fb6dbe1876813984ee69c",
+     "params_hash": "2e84970324df49f40446a070a3a67e3be17f3ca69495b63adef5cc835bc5cbdc",
+     "seed": 0,
+     "decoding": "greedy",
+     "prompt_tokens": 20,
+     "output_tokens": 7,
+     "output_token_hash": "9194a6f1cab7bccd2e6e093bc6b94586133ae9fac334d3dbed636a96d92fa960",
+     "chain_digest": "935e32447a2677627399b215efa5c56bc9cc482a703f304d34f80d3b4358476d",
+     "chain_fnv": "47f6f4da18d9f83e",
+     "log_ref": "log_demo_0001",
+     "finish_reason": "stop",
+     "receipt_version": "r1",
+     "receipt_id": "rcpt_8a6ffcd61a07378f55a78e2f",
+     "issued_at": "2026-10-31T08:05:44.457Z",
+     "output_text_hash": "473ae2d79c533ebe8971e075bc38e99d7f7fa190b6e39d2b830de44bfb853b69",
+     "key_id": "ed25519:6c0e94e4519f9579",
+     "signature": "Adxl70Y2NBsgsztDQeHMVd-Y68AgbuMjuLjDJ-D5PDApg038CD39R5rSah3xndcyRRBz45idKqdGdwaF71F7DA"
+    },
+    "receipt_hash": "8ecc4625666053be6d54e0c4005e15f0311d01200455f28f4e63f58e6e79b6dc",
+    "salt": "AAECAwQFBgcICQoLDA0ODw",
+    "output_token_ids": [
+     785,
+     6722,
+     315,
+     9625,
+     374,
+     12095,
+     13
+    ],
+    "output_text": "The capital of France is Paris.",
+    "output_text_sha": "587fbe51c7d8d52dc40c64eecbae4f3c147f6f1d25f4f59624808e6dc5d69f0a",
+    "finish_reason": "stop",
+    "usage": {
+     "prompt_tokens": 20,
+     "completion_tokens": 7,
+     "total_tokens": 27
+    },
+    "streamed": false
+   },
+   "hash": "716b27da6b152ca2760ebf67e36678d889a85faf6089e6561f467aa1a4794021"
+  },
+  {
+   "index": 4,
+   "type": "tool",
+   "prev": "716b27da6b152ca2760ebf67e36678d889a85faf6089e6561f467aa1a4794021",
+   "body": {
+    "name": "floats",
+    "call_id": "call_4",
+    "args_json": "{\"x\":0.1,\"y\":[1e-07,2.5]}",
+    "args_hash": "e444ff10680a3f916004a8a68661ac2993c003b674c14fd7d680b2622c21afd5",
+    "result_json": "{\"ok\":true}",
+    "result_hash": "ea2553d5bc4917dc53d0ea39bef1579645caf84d17a4987ac62058312573abec",
+    "error": null
+   },
+   "hash": "5af4114083baeb1004256513a745e15705690fb2c10d0cca4afa9f85a3f605cc"
+  }
+ ],
+ "signatures": []
+}

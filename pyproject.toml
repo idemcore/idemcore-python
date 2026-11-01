@@ -28,6 +28,9 @@ classifiers = [
 ]
 dependencies = ["idemcore-verify>=0.3.0", "cryptography>=41"]
 
+[project.scripts]
+idemcore-trace = "idemcore.trace:_cli"
+
 [project.urls]
 Homepage = "https://idemcore.net"
 Documentation = "https://idemcore.net/docs"

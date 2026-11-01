@@ -7,6 +7,8 @@ from .errors import (APIConnectionError, AuthenticationError, ConflictError, Ide
                      InternalServerError, InvalidRequestError, NotFoundError, PermissionDeniedError,
                      RateLimitError, ServiceUnavailableError)
 from .verify import DEFAULT_TRUSTED_KEYS, VerificationResult, verify_receipt
+from .trace import (ReplayDivergence, ReplayReport, Session, TraceVerification, load_trace, record, replay,
+                    save_trace, verify_trace)
 
 __all__ = [
     "__version__", "Idemcore", "AsyncIdemcore", "ChatStream", "AsyncChatStream", "DEFAULT_BASE_URL",
@@ -15,4 +17,6 @@ __all__ = [
     "PermissionDeniedError", "NotFoundError", "ConflictError", "RateLimitError", "InsufficientQuotaError",
     "ServiceUnavailableError", "InternalServerError",
     "verify_receipt", "VerificationResult", "DEFAULT_TRUSTED_KEYS",
+    "Session", "record", "replay", "verify_trace", "load_trace", "save_trace", "ReplayReport", "ReplayDivergence",
+    "TraceVerification",
 ]
