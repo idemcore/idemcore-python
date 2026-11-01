@@ -39,8 +39,9 @@ The client reads `IDEMCORE_API_KEY` (and, optionally, `IDEMCORE_BASE_URL`, defau
 from idemcore import Idemcore
 
 client = Idemcore()
+model = client.models()[0]["id"]   # pass a model id explicitly
 
-r = client.chat("Name the three primary colours.", max_tokens=64)
+r = client.chat("Name the three primary colours.", model=model, max_tokens=64)
 print(r.text)
 print(r.receipt_id)          # rcpt_...
 
@@ -59,7 +60,7 @@ can check the commitments, so keep the salt with the conversation.
 ### Streaming
 
 ```python
-with client.chat_stream("Write a haiku about receipts.") as stream:
+with client.chat_stream("Write a haiku about receipts.", model=model) as stream:
     for chunk in stream:
         print(chunk.delta, end="", flush=True)
 
@@ -75,7 +76,8 @@ from idemcore import AsyncIdemcore
 
 async def main():
     client = AsyncIdemcore()
-    r = await client.chat("Hello")
+    model = (await client.models())[0]["id"]
+    r = await client.chat("Hello", model=model)
     print(r.text, r.receipt_id)
 
 asyncio.run(main())

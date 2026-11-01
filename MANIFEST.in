@@ -1,1 +1,2 @@
 include tests/*.py tests/vectors.json
+include CHANGELOG.md
