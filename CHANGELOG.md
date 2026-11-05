@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0 (2026-11-05)
+
+- Receipt verification accepts format **r2** as well as r1. r2 only renames three
+  fields (`seed`→`variant`, `chain_fnv`→`chain_check`, `kernel_version`→`engine_version`);
+  the signing domain and algorithm are unchanged. Existing r1 receipts still verify.
+- The live API returns r2 receipts to this SDK (User-Agent 0.3.0). SDKs ≤0.2.x still
+  receive r1.
+- Trace replay compares aliased receipt fields across r1/r2.
+- Interchangeable with the JavaScript SDK (`@idemcore/sdk` 0.3.0).
+
 ## 0.2.0 (2026-11-01)
 
 - New `idemcore.trace`: reproducible agents. Record a whole agent run (model calls with

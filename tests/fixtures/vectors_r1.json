@@ -1,0 +1,143 @@
+{
+ "canonical": [
+  {
+   "value": {
+    "b": 1,
+    "a": [
+     1,
+     "x",
+     null,
+     true
+    ],
+    "é": {
+     "z": -5,
+     "y": "\u0000\u001f "
+    }
+   },
+   "expected": "{\"a\":[1,\"x\",null,true],\"b\":1,\"é\":{\"y\":\"\\u0000\\u001f \",\"z\":-5}}"
+  },
+  {
+   "value": [
+    {
+     "role": "user",
+     "content": "héllo \"wörld\" ☃ \n\t</>"
+    }
+   ],
+   "expected": "[{\"content\":\"héllo \\\"wörld\\\" ☃ \\n\\t</>\",\"role\":\"user\"}]"
+  }
+ ],
+ "prompt_hash": "bf720fd044514a520b15a354936f0a4bba55a835b34affdaa7d16461d7d256bf",
+ "salt_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+ "messages": [
+  {
+   "role": "user",
+   "content": "héllo \"wörld\" ☃ \n\t</>"
+  }
+ ],
+ "token_hash": "c8af5460dac0fef6ede7a56e5ced1fd956b3d4c9b186cdc16dcda094b6eec5b9",
+ "token_hash_full": "8c293ef7d8f4c092389f27f5a8fe2260641d2e3d9225de50db749bec35d4ba0a",
+ "params_hash": "c2bb063bdebed18cb586aa09178227bd4401a51aa5f1045bc1cfc84bfe74684e",
+ "log": "0 0 0000000000000000 0000000000000007\n0 1 9e3779b97f4a7c15 c2b2ae3d27d4eb56\n0 2 3c6ef372fe94f82a 85655c7a4fa9d6a5\n0 3 daa66d2c7ddf743f 48180ab7777ec1f4\n0 4 78dde6e5fd29f054 0acab8f49f53ad43\n0 5 1715609f7c746c69 cd7d6731c7289892\n0 6 b54cda58fbbee87e 9030156eeefd83e1\n0 7 538454127b096493 52e2c3ac16d26f30\n0 8 f1bbcdcbfa53e0a8 159571e93ea75a7f\n0 9 8ff34785799e5cbd d8482026667c45ce\n0 10 2e2ac13ef8e8d8d2 9aface638e51311d\n0 11 cc623af8783354e7 5dad7ca0b6261c6c\nALL 5e66b6ad1d9daba1\n",
+ "chain_digest": "64c856bd22e5b03e1a16211ba3e6761b3c595b41fde51240552ab8eada864266",
+ "chain_fnv": "5e66b6ad1d9daba1",
+ "text": [
+  {
+   "text": "",
+   "normalized": "",
+   "hash_salted": "624e40e3da6f7c3aa739bdaf8ebc3754e7996651097226e69c93523476fb3597",
+   "hash_full": "15948784af907ac9921f9317e1ee9468882602b289022020882512cc55cdffba"
+  },
+  {
+   "text": "   ",
+   "normalized": "",
+   "hash_salted": "624e40e3da6f7c3aa739bdaf8ebc3754e7996651097226e69c93523476fb3597",
+   "hash_full": "15948784af907ac9921f9317e1ee9468882602b289022020882512cc55cdffba"
+  },
+  {
+   "text": "a\tb\r\nc",
+   "normalized": "a b c",
+   "hash_salted": "dcc323af7ec7d0ab8ad8e9e95fb4f8e72fd845c25a3d5de6e8ea3f4d87877ba3",
+   "hash_full": "e6afb1122cc35fff7c1dd712694bc069b1aaa2995ee268e8113d16bd5cfd37f0"
+  },
+  {
+   "text": "é",
+   "normalized": "é",
+   "hash_salted": "7541736ccf6aef92b95918818c10a5e691596efd5bdd1226cdf4458f2f4b1122",
+   "hash_full": "4754106980603d0290491b4f94c854a0100e66bf00f52e2f788f51ead2f41c6b"
+  },
+  {
+   "text": "﻿x y z ",
+   "normalized": "x y z",
+   "hash_salted": "c6392f2cad26529fcdc4fb812819f7a7e1b65a7c28923e5be5cb2c2c99d738a7",
+   "hash_full": "38c40bddc743a0d03f411b0ae0dcff7fd0faf42daf80ac16f5fc964d67601978"
+  },
+  {
+   "text": "  Paris is the\n\ncapital of Françe.　 ",
+   "normalized": "Paris is the capital of Françe.",
+   "hash_salted": "d0b82f093d332185753e68a51f2694bddab1d07ec5fe55633a4f56ddc404857c",
+   "hash_full": "6f9579598114ca2fc0c3071628e533dd2791f844a1536a68e9def52e7b8f77ec"
+  }
+ ],
+ "output_text": "  Paris is the\n\ncapital of Françe.　 ",
+ "receipt": {
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "model_id": "m",
+  "weights_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "kernel_version": "public",
+  "engine_build": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "privacy": "hash_only",
+  "prompt_hash": "bf720fd044514a520b15a354936f0a4bba55a835b34affdaa7d16461d7d256bf",
+  "params_hash": "c2bb063bdebed18cb586aa09178227bd4401a51aa5f1045bc1cfc84bfe74684e",
+  "seed": 0,
+  "decoding": "greedy",
+  "prompt_tokens": 8,
+  "output_tokens": 4,
+  "output_token_hash": "c8af5460dac0fef6ede7a56e5ced1fd956b3d4c9b186cdc16dcda094b6eec5b9",
+  "chain_digest": "64c856bd22e5b03e1a16211ba3e6761b3c595b41fde51240552ab8eada864266",
+  "chain_fnv": "5e66b6ad1d9daba1",
+  "log_ref": "idemcore://logs/x",
+  "output_text_hash": "d0b82f093d332185753e68a51f2694bddab1d07ec5fe55633a4f56ddc404857c",
+  "finish_reason": "stop",
+  "receipt_version": "r1",
+  "receipt_id": "rcpt_b3ec843013296a2b8c91efa2",
+  "issued_at": "2026-10-31T08:01:32.011Z",
+  "key_id": "ed25519:67b4daaed37910ba",
+  "signature": "CgBZZ0qM4VC9xLiNLsEMa_MFV4U6P-b6ubYTYCZIV9vbus4WcKc7mJW-20-sxitMnwHIr2gBezrPQf4l7-JqCg"
+ },
+ "public_jwk": {
+  "kty": "OKP",
+  "crv": "Ed25519",
+  "x": "bEazRQ6euvdfSsaQJmf0vM0o_9YExMAOliUV0sVPeS0",
+  "kid": "ed25519:67b4daaed37910ba"
+ },
+ "event": {
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "seq": 1,
+  "ts": "2026-10-31T00:00:00.000Z",
+  "event_type": "receipt.issued",
+  "receipt_id": "rcpt_b3ec843013296a2b8c91efa2",
+  "actor": "key:x",
+  "payload": {
+   "a": 1,
+   "b": [
+    true,
+    null,
+    "x"
+   ]
+  },
+  "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "event_hash": "529c04cbdb1923a5cce464b7d7497cc15887dbc90e42bb8093f49a8d34028a47"
+ },
+ "merkle": {
+  "hashes": [
+   "529c04cbdb1923a5cce464b7d7497cc15887dbc90e42bb8093f49a8d34028a47",
+   "cc4ffcb11e8138ce3083dc69376dc18c56cbe58a589fbec27efb60ca46a8eea8",
+   "7da956d7301e03164b224f3fbf26978f53041a9abdf1e285ad466eba8be96e03",
+   "e3e37b0c2a74c5616f352d2876c68b834ce4827cd51811811aa690ca6f493056",
+   "e160fde944cca3f8b17fa7058d875c2beac40149a57d399162ca319427442ed5",
+   "dfa330e2ab8a40d274e06019749257fbe350a637fdab3408544f87b641cb0db8",
+   "e72a095d5e433967720a7761126a6acec477562e4c3cb17d23c41f3f3eaf6a7d"
+  ],
+  "root": "914cdc95aa27df7e1a815e176ab4b55d9c3eaeb402c1fa85c0bd3ae14944140a"
+ }
+}

@@ -51,10 +51,25 @@ TRACE_FORMAT = "idemcore-trace/r1"
 SIG_DOMAIN = b"idemcore-trace/r1\n"
 STEP_TYPES = ("model", "tool", "note")
 # Receipt fields that must match between a recorded answer and its replay.
-_SAME = ("model_id", "weights_hash", "decoding", "seed", "prompt_tokens", "output_tokens",
-         "chain_digest", "chain_fnv", "finish_reason")
+# Each entry is r1 name first, optional r2 alias second; compare by value across versions.
+_SAME = (("model_id",), ("weights_hash",), ("decoding",), ("seed", "variant"), ("prompt_tokens",),
+         ("output_tokens",), ("chain_digest",), ("chain_fnv", "chain_check"), ("finish_reason",))
 # Fields that may legitimately differ (new engine build); reported as notes.
-_ENV = ("engine_build", "kernel_version")
+_ENV = (("engine_build",), ("kernel_version", "engine_version"))
+
+
+def _rf(r, names):
+    for n in names:
+        if n in r:
+            return r.get(n)
+    return None
+
+
+def _rn(r, names):
+    for n in names:
+        if n in r:
+            return n
+    return names[0]
 
 
 # ------------------------------------------------------------------ hashing
@@ -494,14 +509,14 @@ def compare_model(rec: Mapping[str, Any], new: ChatResult) -> StepReport:
         rep.notes.append("token ids not disclosed on one side; compared chain digest and text")
     if rec.get("output_text") != new.text:
         rep.diffs.append("output text differs")
-    for k in _SAME:
-        if a.get(k) != b.get(k):
-            rep.diffs.append(f"receipt {k} differs")
+    for names in _SAME:
+        if _rf(a, names) != _rf(b, names):
+            rep.diffs.append(f"receipt {_rn(a, names)} differs")
     if a.get("privacy") == b.get("privacy") == "full" and a.get("output_token_hash") != b.get("output_token_hash"):
         rep.diffs.append("receipt output_token_hash differs")
-    for k in _ENV:
-        if a.get(k) != b.get(k):
-            rep.notes.append(f"{k} changed: {a.get(k)} -> {b.get(k)}")
+    for names in _ENV:
+        if _rf(a, names) != _rf(b, names):
+            rep.notes.append(f"{_rn(a, names)} changed: {_rf(a, names)} -> {_rf(b, names)}")
     rep.identical = not rep.diffs
     return rep
 

@@ -1,0 +1,33 @@
+{
+ "receipt": {
+  "tenant_id": "00000000-0000-0000-0000-000000000001",
+  "model_id": "m",
+  "weights_hash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "engine_version": "public",
+  "engine_build": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "privacy": "hash_only",
+  "prompt_hash": "bf720fd044514a520b15a354936f0a4bba55a835b34affdaa7d16461d7d256bf",
+  "params_hash": "c2bb063bdebed18cb586aa09178227bd4401a51aa5f1045bc1cfc84bfe74684e",
+  "variant": 0,
+  "decoding": "greedy",
+  "prompt_tokens": 8,
+  "output_tokens": 4,
+  "output_token_hash": "c8af5460dac0fef6ede7a56e5ced1fd956b3d4c9b186cdc16dcda094b6eec5b9",
+  "chain_digest": "64c856bd22e5b03e1a16211ba3e6761b3c595b41fde51240552ab8eada864266",
+  "chain_check": "5e66b6ad1d9daba1",
+  "log_ref": "idemcore://logs/x",
+  "receipt_version": "r2",
+  "output_text_hash": "d0b82f093d332185753e68a51f2694bddab1d07ec5fe55633a4f56ddc404857c",
+  "finish_reason": "stop",
+  "receipt_id": "rcpt_893b69d7d36395721d495504",
+  "issued_at": "2026-11-05T06:14:33.262Z",
+  "key_id": "ed25519:413b674b0d29e34d",
+  "signature": "hw5WyxseSMlwNw8ujIa3l3gJl4YOICSZHhawl0_nNROdTQNAPscNFlgDON_TJ41hr5L3Xpd0oq09DaakOse4Dg"
+ },
+ "public_jwk": {
+  "kty": "OKP",
+  "crv": "Ed25519",
+  "x": "tY9zsswLzlF8BUBjvcderpu19-8d4FiwkMMuxgxOHV4",
+  "kid": "ed25519:413b674b0d29e34d"
+ }
+}

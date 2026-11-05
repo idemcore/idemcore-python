@@ -1,11 +1,15 @@
 # SPDX-License-Identifier: Apache-2.0
-"""Local (offline) verification of Idemcore receipts, format r1.
+"""Local (offline) verification of Idemcore receipts, formats r1 and r2.
+
+r2 only renames three fields (``seed``→``variant``, ``chain_fnv``→``chain_check``,
+``kernel_version``→``engine_version``); the signing domain and algorithm are unchanged.
+Verifiers accept both formats.
 
 Levels:
 
 * ``L1``: receipt format and Ed25519 signature against a trusted key set.
   Uses the ``cryptography`` package for Ed25519.
-* ``L2``: the receipt's ``chain_digest`` and ``chain_fnv`` recomputed from the
+* ``L2``: the receipt's ``chain_digest`` and chain-check field recomputed from the
   answer's public token log (``GET /v1/receipts/{id}/log``). Standard library only;
   the FNV-1a-64 chain comes from the ``idemcore-verify`` package.
 * ``disclosure``: the prompt, output token ids and displayed text checked against the
@@ -29,6 +33,7 @@ from idemcore_verify.core import FNV_OFFSET, fnv1a64
 
 __all__ = [
     "DEFAULT_TRUSTED_KEYS", "TrustedKey", "LevelResult", "VerificationResult",
+    "RECEIPT_VERSION", "RECEIPT_VERSIONS", "chain_check_field",
     "canonical_json", "check_format", "verify_l1", "verify_l2", "verify_disclosure",
     "verify_receipt", "parse_public_log", "log_digests", "load_keys",
 ]
@@ -40,23 +45,31 @@ DEFAULT_TRUSTED_KEYS: List[Dict[str, str]] = [
      "kid": "ed25519:2fab59995ac55e4f"},
 ]
 
-RECEIPT_VERSION = "r1"
+RECEIPT_VERSION = "r2"
+RECEIPT_VERSIONS = ("r1", "r2")
+_R2_RENAMES = {"seed": "variant", "chain_fnv": "chain_check", "kernel_version": "engine_version"}
 SIG_DOMAIN = b"idemcore-receipt/r1\n"
 CHAIN_DOMAIN = b"idemcore/chain/r1\x00"
 _HEX64 = re.compile(r"^[0-9a-f]{64}$")
 _HEX16 = re.compile(r"^[0-9a-f]{16}$")
 _HEXF = re.compile(r"^[0-9a-fA-F]{1,16}$")
 _ISSUED = re.compile(r"^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(\.\d{1,6})?Z$")
-_REQUIRED = {
+_REQUIRED_R1 = {
     "receipt_version": str, "receipt_id": str, "issued_at": str, "tenant_id": str,
     "model_id": str, "weights_hash": str, "kernel_version": str, "engine_build": str,
     "privacy": str, "prompt_hash": str, "params_hash": str, "seed": int, "decoding": str,
     "prompt_tokens": int, "output_tokens": int, "output_token_hash": str,
     "chain_digest": str, "chain_fnv": str, "log_ref": str, "key_id": str, "signature": str,
 }
+_REQUIRED_R2 = {_R2_RENAMES.get(k, k): t for k, t in _REQUIRED_R1.items()}
 _OPTIONAL = {"finish_reason": str, "request_id": str, "output_text_hash": str}
 _HASH_FIELDS = ("weights_hash", "prompt_hash", "params_hash", "output_token_hash", "chain_digest")
 _SAFE_INT = 2 ** 53 - 1
+
+
+def chain_check_field(r: Mapping[str, Any]) -> str:
+    """Name of the 16-hex chain check field for this receipt's version."""
+    return "chain_check" if r.get("receipt_version") == "r2" else "chain_fnv"
 
 
 # ------------------------------------------------------------------ encoding helpers
@@ -93,7 +106,7 @@ def _check_canonical(v: Any, path: str = "$") -> None:
 
 
 def canonical_json(obj: Any) -> bytes:
-    """Canonical JSON (receipts r1): keys sorted by code point, no whitespace,
+    """Canonical JSON (receipts r1/r2): keys sorted by code point, no whitespace,
     UTF-8 with non-ASCII literal, integers only."""
     _check_canonical(obj)
     return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False,
@@ -265,29 +278,31 @@ def _res(level: str, errors: List[str], **details: Any) -> LevelResult:
 def check_format(r: Any) -> List[str]:
     if not isinstance(r, dict):
         return ["receipt is not an object"]
+    if r.get("receipt_version") not in RECEIPT_VERSIONS:
+        return [f"unsupported receipt_version {r.get('receipt_version')}"]
+    required = _REQUIRED_R2 if r["receipt_version"] == "r2" else _REQUIRED_R1
+    chk = chain_check_field(r)
     errs: List[str] = []
-    for k, t in _REQUIRED.items():
+    for k, t in required.items():
         if k not in r:
             errs.append(f"missing field {k}")
         elif not isinstance(r[k], t) or isinstance(r[k], bool):
             errs.append(f"field {k} must be {t.__name__}")
     for k in r:
-        if k not in _REQUIRED and k not in _OPTIONAL:
+        if k not in required and k not in _OPTIONAL:
             errs.append(f"unknown field {k}")
     for k, t in _OPTIONAL.items():
         if k in r and not isinstance(r[k], t):
             errs.append(f"field {k} must be {t.__name__}")
     if errs:
         return errs
-    if r["receipt_version"] != RECEIPT_VERSION:
-        errs.append(f"unsupported receipt_version {r['receipt_version']}")
     for k in _HASH_FIELDS:
         if not _HEX64.match(r[k]):
             errs.append(f"{k} must be 64 lowercase hex")
     if "output_text_hash" in r and not _HEX64.match(r["output_text_hash"]):
         errs.append("output_text_hash must be 64 lowercase hex")
-    if not _HEX16.match(r["chain_fnv"]):
-        errs.append("chain_fnv must be 16 lowercase hex")
+    if not _HEX16.match(r[chk]):
+        errs.append(f"{chk} must be 16 lowercase hex")
     if r["privacy"] not in ("hash_only", "full"):
         errs.append("privacy must be hash_only or full")
     if r["prompt_tokens"] < 1 or r["output_tokens"] < 0:
@@ -330,8 +345,9 @@ def verify_l2(receipt: Mapping[str, Any], log_text: str) -> LevelResult:
     errs: List[str] = []
     if d["chain_digest"] != receipt.get("chain_digest"):
         errs.append("chain_digest mismatch")
-    if d["chain_fnv"] != receipt.get("chain_fnv"):
-        errs.append("chain_fnv mismatch")
+    chk = chain_check_field(receipt)
+    if d["chain_fnv"] != receipt.get(chk):
+        errs.append(f"{chk} mismatch")
     if d["all_line"] is not None and d["all_line"] != d["chain_fnv"]:
         errs.append("log ALL line inconsistent with its own lines")
     want = int(receipt.get("prompt_tokens", 0)) + int(receipt.get("output_tokens", 0))
