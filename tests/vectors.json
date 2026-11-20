@@ -1,0 +1,197 @@
+{
+  "_note": "Test vectors only (receipt format r2). Throwaway signing key, never stored; synthetic log.",
+  "keys": [
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "x": "6NTON403AArFPFXqdKqbefMDHp1TvUIKph_NVKbZbNY",
+      "kid": "ed25519:7f10893e4b1ce5be"
+    }
+  ],
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is the capital of France?"
+    }
+  ],
+  "output_ids": [
+    785,
+    6722,
+    315,
+    9625,
+    374,
+    12095,
+    13
+  ],
+  "output_text": "The capital of France is Paris.",
+  "salt_b64u": "AAECAwQFBgcICQoLDA0ODw",
+  "log_text": "0 0 480dd61879ce0c5e 39a92148598585f3\n1 0 15a93c3cd49f4474 03636edc79c8d92f\n2 0 8982ce2f321bccb5 aa15e10dece0ccbb\n3 0 29caace56e7a1e03 79464f11dd3cd5d4\n4 0 c9bbca62a591c996 e9887ee894fbdb67\n5 0 87db25c269adc3b8 e37c9129e759fdb5\n6 0 fb80f7f683c10c4a 9de0456ef78f438b\n7 0 01ca21eb3f32e49f ba487080cede224c\n8 0 26086ae8008d69be 7950f73115fcb4a5\n9 0 ddeeae1defdf4b1e 864eed2a80eef17b\n10 0 2cea6a9bf686ea47 50e9ef459284e040\n11 0 e026f37d4d37f0c1 56c21838cca5c4e8\n12 0 c69b483ab2a63954 8f659787bb5da5dc\n13 0 14ea8f59b4becbc7 092f7c0d25283e04\n14 0 64c73d42750a523e e9b242a44f8b43c9\n15 0 03aab76bb1b55354 fc0323c7afe93aa9\n16 0 fc679538d442f6e9 1f5799c8654ddd03\n17 0 7eb5dfa8312f8282 f27c8fca7fec41d2\n18 0 c5eb724a84919427 5303a339ac5e58e7\n19 0 bd492d8f87ce4e66 155201efa8fd36aa\n20 0 f5f2c0a3c9480d01 42bd1f661a7b4783\n21 0 fed1db78ea319f4a 67d4b544a1c7efb4\n22 0 3653228e83247d78 6037794a8fc47948\n23 0 caae587130289703 b68198d9c851392c\n24 0 cffd3401c73772cd 5598f4cfe2fa4f43\n25 0 c4a317f1af3a3072 abc98dfc5f17811e\n26 0 a6047782b0c043a9 42913170f93d6907\nALL 4adf9febb9cb354e\n",
+  "bad_log_text": "0 0 480dd61879ce0c5e 39a92148598585f3\n1 0 15a93c3cd49f4474 03636edc79c8d92f\n2 0 8982ce2f321bccb5 aa15e10dece0ccbb\n3 0 29caace56e7a1e03 79464f11dd3cd5d0\n4 0 c9bbca62a591c996 e9887ee894fbdb67\n5 0 87db25c269adc3b8 e37c9129e759fdb5\n6 0 fb80f7f683c10c4a 9de0456ef78f438b\n7 0 01ca21eb3f32e49f ba487080cede224c\n8 0 26086ae8008d69be 7950f73115fcb4a5\n9 0 ddeeae1defdf4b1e 864eed2a80eef17b\n10 0 2cea6a9bf686ea47 50e9ef459284e040\n11 0 e026f37d4d37f0c1 56c21838cca5c4e8\n12 0 c69b483ab2a63954 8f659787bb5da5dc\n13 0 14ea8f59b4becbc7 092f7c0d25283e04\n14 0 64c73d42750a523e e9b242a44f8b43c9\n15 0 03aab76bb1b55354 fc0323c7afe93aa9\n16 0 fc679538d442f6e9 1f5799c8654ddd03\n17 0 7eb5dfa8312f8282 f27c8fca7fec41d2\n18 0 c5eb724a84919427 5303a339ac5e58e7\n19 0 bd492d8f87ce4e66 155201efa8fd36aa\n20 0 f5f2c0a3c9480d01 42bd1f661a7b4783\n21 0 fed1db78ea319f4a 67d4b544a1c7efb4\n22 0 3653228e83247d78 6037794a8fc47948\n23 0 caae587130289703 b68198d9c851392c\n24 0 cffd3401c73772cd 5598f4cfe2fa4f43\n25 0 c4a317f1af3a3072 abc98dfc5f17811e\n26 0 a6047782b0c043a9 42913170f93d6907\nALL 4adf9febb9cb354e\n",
+  "receipts": {
+    "full": {
+      "receipt_version": "r2",
+      "receipt_id": "rcpt_000000000000000000007e58",
+      "issued_at": "2026-11-20T08:00:01.000Z",
+      "tenant_id": "tnt_test",
+      "model_id": "qwen2.5-7b-instruct-q4",
+      "weights_hash": "abababababababababababababababababababababababababababababababab",
+      "engine_version": "0.3.0",
+      "engine_build": "test",
+      "privacy": "full",
+      "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+      "params_hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "variant": 0,
+      "decoding": "greedy",
+      "prompt_tokens": 20,
+      "output_tokens": 7,
+      "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+      "chain_digest": "b77a7302e9dc6cc8b34a47db3269d78cb26e396016198cfeeac9f2c04979c9e5",
+      "chain_check": "bd1a74a1ff479687",
+      "log_ref": "log_test_0001",
+      "finish_reason": "stop",
+      "key_id": "ed25519:7f10893e4b1ce5be",
+      "signature": "4NHcPCj4E7j01tNZKTCKtoWDMKNUC_bl2vhj3Dg4bkfuz9ND_rS-zA2FAM6KWk48MRhgvuYRjhc0bSTefC_HBQ"
+    },
+    "hash_only": {
+      "receipt_version": "r2",
+      "receipt_id": "rcpt_000000000000000000007e59",
+      "issued_at": "2026-11-20T08:00:02.000Z",
+      "tenant_id": "tnt_test",
+      "model_id": "qwen2.5-7b-instruct-q4",
+      "weights_hash": "abababababababababababababababababababababababababababababababab",
+      "engine_version": "0.3.0",
+      "engine_build": "test",
+      "privacy": "hash_only",
+      "prompt_hash": "2b7b9086cf7a83c90fafde846c9f3483e11ca623284fb6dbe1876813984ee69c",
+      "params_hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "variant": 0,
+      "decoding": "greedy",
+      "prompt_tokens": 20,
+      "output_tokens": 7,
+      "output_token_hash": "9194a6f1cab7bccd2e6e093bc6b94586133ae9fac334d3dbed636a96d92fa960",
+      "chain_digest": "b77a7302e9dc6cc8b34a47db3269d78cb26e396016198cfeeac9f2c04979c9e5",
+      "chain_check": "e4a80d052578c946",
+      "log_ref": "log_test_0002",
+      "finish_reason": "stop",
+      "key_id": "ed25519:7f10893e4b1ce5be",
+      "signature": "la7E1Rcl1JBK-s6sQDTvjrynjpTjgDE7jMxCUQiyTfQXjoXIsrnc9eOxQWtItiEyEP1MzKgC0kSCjDp-qu5PCw"
+    },
+    "full_text": {
+      "receipt_version": "r2",
+      "receipt_id": "rcpt_000000000000000000007e5a",
+      "issued_at": "2026-11-20T08:00:03.000Z",
+      "tenant_id": "tnt_test",
+      "model_id": "qwen2.5-7b-instruct-q4",
+      "weights_hash": "abababababababababababababababababababababababababababababababab",
+      "engine_version": "0.3.0",
+      "engine_build": "test",
+      "privacy": "full",
+      "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+      "params_hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "variant": 0,
+      "decoding": "greedy",
+      "prompt_tokens": 20,
+      "output_tokens": 7,
+      "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+      "chain_digest": "b77a7302e9dc6cc8b34a47db3269d78cb26e396016198cfeeac9f2c04979c9e5",
+      "chain_check": "7e544c39543bc2f8",
+      "log_ref": "log_test_0003",
+      "finish_reason": "stop",
+      "output_text_hash": "8d13067e36d38dff1193e0cd004770bef72df7975a5c9a05fa994758b3ae787c",
+      "key_id": "ed25519:7f10893e4b1ce5be",
+      "signature": "WkRPJk9J0iX_kdqdKqL34EtEsFbnSu1FbY-4Zr-PLQGxJ_ZQttlDQlWUCYD7hm0Xhb64PAD8NLdBts7lMmbTBQ"
+    },
+    "hash_only_text": {
+      "receipt_version": "r2",
+      "receipt_id": "rcpt_000000000000000000007e5b",
+      "issued_at": "2026-11-20T08:00:04.000Z",
+      "tenant_id": "tnt_test",
+      "model_id": "qwen2.5-7b-instruct-q4",
+      "weights_hash": "abababababababababababababababababababababababababababababababab",
+      "engine_version": "0.3.0",
+      "engine_build": "test",
+      "privacy": "hash_only",
+      "prompt_hash": "2b7b9086cf7a83c90fafde846c9f3483e11ca623284fb6dbe1876813984ee69c",
+      "params_hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "variant": 0,
+      "decoding": "greedy",
+      "prompt_tokens": 20,
+      "output_tokens": 7,
+      "output_token_hash": "9194a6f1cab7bccd2e6e093bc6b94586133ae9fac334d3dbed636a96d92fa960",
+      "chain_digest": "b77a7302e9dc6cc8b34a47db3269d78cb26e396016198cfeeac9f2c04979c9e5",
+      "chain_check": "ba4f2c8b384f9bc6",
+      "log_ref": "log_test_0004",
+      "finish_reason": "stop",
+      "output_text_hash": "473ae2d79c533ebe8971e075bc38e99d7f7fa190b6e39d2b830de44bfb853b69",
+      "key_id": "ed25519:7f10893e4b1ce5be",
+      "signature": "749Do6yDw1hOL-_J3hnUucvcWI6hPrbrT_gj7-ph57Nj58RaV4TE7lHiFu6sjZYuXllHgb87vMG3PxFSjcgEDg"
+    },
+    "foreign_key": {
+      "receipt_version": "r2",
+      "receipt_id": "rcpt_000000000000000000007e5d",
+      "issued_at": "2026-11-20T08:00:06.000Z",
+      "tenant_id": "tnt_test",
+      "model_id": "qwen2.5-7b-instruct-q4",
+      "weights_hash": "abababababababababababababababababababababababababababababababab",
+      "engine_version": "0.3.0",
+      "engine_build": "test",
+      "privacy": "full",
+      "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+      "params_hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "variant": 0,
+      "decoding": "greedy",
+      "prompt_tokens": 20,
+      "output_tokens": 7,
+      "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+      "chain_digest": "b77a7302e9dc6cc8b34a47db3269d78cb26e396016198cfeeac9f2c04979c9e5",
+      "chain_check": "0b28b0d103736c9d",
+      "log_ref": "log_test_0006",
+      "finish_reason": "stop",
+      "key_id": "ed25519:a123ef969e520468",
+      "signature": "pxqlP557pSoMbTcbygDaQSnLjtTrRZ8V0n_jlLlq77Q4nupVUUIcflXBqej5Q7MrBltUikMKq0wNCz6d1MAlCw"
+    },
+    "tampered": {
+      "receipt_version": "r2",
+      "receipt_id": "rcpt_000000000000000000007e5a",
+      "issued_at": "2026-11-20T08:00:03.000Z",
+      "tenant_id": "tnt_test",
+      "model_id": "qwen2.5-7b-instruct-q8",
+      "weights_hash": "abababababababababababababababababababababababababababababababab",
+      "engine_version": "0.3.0",
+      "engine_build": "test",
+      "privacy": "full",
+      "prompt_hash": "2c026e6565150ef3317d12bcb149d55aece24882f1d3d394753f1506be638886",
+      "params_hash": "cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+      "variant": 0,
+      "decoding": "greedy",
+      "prompt_tokens": 20,
+      "output_tokens": 7,
+      "output_token_hash": "89c882cd8304389529e1467c823023178bde6d751d57e56d53032c7802cc543b",
+      "chain_digest": "b77a7302e9dc6cc8b34a47db3269d78cb26e396016198cfeeac9f2c04979c9e5",
+      "chain_check": "7e544c39543bc2f8",
+      "log_ref": "log_test_0003",
+      "finish_reason": "stop",
+      "output_text_hash": "8d13067e36d38dff1193e0cd004770bef72df7975a5c9a05fa994758b3ae787c",
+      "key_id": "ed25519:7f10893e4b1ce5be",
+      "signature": "WkRPJk9J0iX_kdqdKqL34EtEsFbnSu1FbY-4Zr-PLQGxJ_ZQttlDQlWUCYD7hm0Xhb64PAD8NLdBts7lMmbTBQ"
+    }
+  },
+  "expect": {
+    "full": {
+      "l1": true,
+      "l2": true
+    },
+    "hash_only": {
+      "l1": true
+    },
+    "tampered": {
+      "l1": false
+    },
+    "foreign_key": {
+      "l1": false
+    },
+    "bad_log": {
+      "l2": false
+    }
+  }
+}
